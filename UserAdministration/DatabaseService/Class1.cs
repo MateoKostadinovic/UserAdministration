@@ -55,5 +55,20 @@ namespace DatabaseService
                 }
             }
         }
+
+        public void DeleteUser(int nId)
+        {
+            string sSqlConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
+            using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
+            using (DbCommand oCommand = oConnection.CreateCommand())//nakon ove funkcije memorija se oslobada zbog using
+            {
+                oCommand.CommandText = "DELETE FROM users WHERE USER_ID = '" + nId + "'";
+                oConnection.Open();
+                using (DbDataReader oReader = oCommand.ExecuteReader())
+                {
+
+                }
+            }
+        }
     }
 }

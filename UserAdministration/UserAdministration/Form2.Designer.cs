@@ -128,6 +128,7 @@
             this.btnEditCancel.TabIndex = 9;
             this.btnEditCancel.Text = "ZATVORI";
             this.btnEditCancel.UseVisualStyleBackColor = true;
+            this.btnEditCancel.Click += new System.EventHandler(this.btnEditCancel_Click);
             // 
             // btnEditUser
             // 
@@ -156,7 +157,7 @@
             this.Controls.Add(this.lblEditUserName);
             this.Controls.Add(this.lblEditTitle);
             this.Name = "FormEditUser";
-            this.Text = "Form2";
+            this.Text = "Uredivanje korisnika";
             this.ResumeLayout(false);
             this.PerformLayout();
 

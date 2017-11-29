@@ -23,14 +23,14 @@ namespace UserAdministration
             //DODAVANJE NOVIH KOLONA
             //Button za uredivanje
             DataGridViewImageColumn oEditButton = new DataGridViewImageColumn();//nova kolona tipa Image
-            oEditButton.Image = Image.FromFile("D:\\Mateo Kostadinovic\\NET\\LV4\\if_pencil_1608787.png");
+            oEditButton.Image = Image.FromFile("C:\\Fakultet\\Programiranje u .NET okolini\\if_pencil_1608787.png");
             oEditButton.Width = 20;
             oEditButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             DataGridViewUsers.Columns.Add(oEditButton);
 
             //Button za brisanje
             DataGridViewImageColumn oDeleteButton = new DataGridViewImageColumn();//nova kolona tipa Image
-            oDeleteButton.Image = Image.FromFile("D:\\Mateo Kostadinovic\\NET\\LV4\\if_ic_delete_48px_352303.png");
+            oDeleteButton.Image = Image.FromFile("C:\\Fakultet\\Programiranje u .NET okolini\\if_ic_delete_48px_352303.png");
             oDeleteButton.Width = 20;
             oDeleteButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             DataGridViewUsers.Columns.Add(oDeleteButton);
@@ -52,6 +52,12 @@ namespace UserAdministration
                 FormEditUser.inptEditName.Text = DataGridViewUsers.Rows[e.RowIndex].Cells[3].Value.ToString();
                 FormEditUser.inptEditSurname.Text = DataGridViewUsers.Rows[e.RowIndex].Cells[4].Value.ToString();
                 FormEditUser.Show();
+            }
+            if (DataGridViewUsers.CurrentCell.ColumnIndex.Equals(6) && e.RowIndex != -1)
+            {
+                FormDelete FormDeleteUser = new FormDelete(this);
+                FormDeleteUser.lblDeleteUserId.Text = DataGridViewUsers.Rows[e.RowIndex].Cells[0].Value.ToString();
+                FormDeleteUser.Show();
             }
         }
     }

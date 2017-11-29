@@ -89,7 +89,7 @@
             this.ClientSize = new System.Drawing.Size(949, 410);
             this.Controls.Add(this.DataGridViewUsers);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Korisnici";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewUsers)).EndInit();
             this.ResumeLayout(false);
 

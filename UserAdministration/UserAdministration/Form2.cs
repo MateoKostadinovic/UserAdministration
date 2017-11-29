@@ -37,5 +37,10 @@ namespace UserAdministration
             this.Hide();
 
         }
+
+        private void btnEditCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
