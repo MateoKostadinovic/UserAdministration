@@ -67,11 +67,12 @@
             // lblDeleteUserId
             // 
             this.lblDeleteUserId.AutoSize = true;
-            this.lblDeleteUserId.Location = new System.Drawing.Point(168, 63);
+            this.lblDeleteUserId.Location = new System.Drawing.Point(165, 59);
             this.lblDeleteUserId.Name = "lblDeleteUserId";
             this.lblDeleteUserId.Size = new System.Drawing.Size(46, 13);
             this.lblDeleteUserId.TabIndex = 3;
             this.lblDeleteUserId.Text = "User_ID";
+            this.lblDeleteUserId.Visible = false;
             // 
             // FormDelete
             // 

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAdministration", "UserA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseService", "DatabaseService\DatabaseService.csproj", "{90E4AC1B-707F-4705-B707-02130F53804C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{65271F12-1DF1-466B-8726-7BFB26394A15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{90E4AC1B-707F-4705-B707-02130F53804C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90E4AC1B-707F-4705-B707-02130F53804C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90E4AC1B-707F-4705-B707-02130F53804C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65271F12-1DF1-466B-8726-7BFB26394A15}.Debug|Any CPU.ActiveCfg = Debug
+		{65271F12-1DF1-466B-8726-7BFB26394A15}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

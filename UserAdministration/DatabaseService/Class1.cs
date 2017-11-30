@@ -11,11 +11,12 @@ using System.Configuration;
 namespace DatabaseService
 {
     public class Crud
-    {      
+    {
+        List<User> lUsers = new List<User>();
         public List<User> GetUsers()
         {
-            List<User> lUsers = new List<User>();
-            string sSqlConnectionString = ConfigurationManager.AppSettings["ConnectionString"];//Popunjavanje liste iz baze
+            string sSqlConnectionString = ConfigurationManager.AppSettings["connectionString"];//Popunjavanje liste iz baze
+            Trace.WriteLine(sSqlConnectionString);
             using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
             using (DbCommand oCommand = oConnection.CreateCommand())
             {
@@ -42,7 +43,7 @@ namespace DatabaseService
         public void UpdateUser(User oUser)
         {
             Trace.WriteLine(oUser.sUserFirstName);
-            string sSqlConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
+            string sSqlConnectionString = ConfigurationManager.AppSettings["connectionString"];
             using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
             using (DbCommand oCommand = oConnection.CreateCommand())//nakon ove funkcije memorija se oslobada zbog using
             {
@@ -58,7 +59,7 @@ namespace DatabaseService
 
         public void DeleteUser(int nId)
         {
-            string sSqlConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
+            string sSqlConnectionString = ConfigurationManager.AppSettings["connectionString"];
             using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
             using (DbCommand oCommand = oConnection.CreateCommand())//nakon ove funkcije memorija se oslobada zbog using
             {
@@ -69,6 +70,48 @@ namespace DatabaseService
 
                 }
             }
+        }
+        public void AddUser(User oUser)
+        {
+            string sSqlConnectionString = ConfigurationManager.AppSettings["connectionString"];
+            using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
+            using (DbCommand oCommand = oConnection.CreateCommand())//nakon ove funkcije memorija se oslobada zbog using
+            {
+                //Trace.WriteLine("INSERT INTO users USERNAME = '" + oUser.sUserName + "', PASSWORD = '" + oUser.sUserPassword + "' , NAME = '" + oUser.sUserFirstName + "', SURNAME = '" + oUser.sUserLastName);
+                oCommand.CommandText = "INSERT INTO users (USERNAME, PASSWORD, NAME, SURNAME) VALUES ('" + oUser.sUserName + "','" + oUser.sUserPassword + "','" + oUser.sUserName + "','" + oUser.sUserLastName + "')";
+                oConnection.Open();
+                using (DbDataReader oReader = oCommand.ExecuteReader())
+                {
+
+                }
+            }
+        }
+
+        public List<User> SearchUser(string sUserFirstName)
+        {
+            string sSqlConnectionString = ConfigurationManager.AppSettings["connectionString"];
+            using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
+            using (DbCommand oCommand = oConnection.CreateCommand())//nakon ove funkcije memorija se oslobada zbog using
+            {
+                oCommand.CommandText = "SELECT * FROM users WHERE NAME LIKE '%"+ sUserFirstName +"%'";
+                Trace.WriteLine(sUserFirstName);
+                oConnection.Open();
+                using (DbDataReader oReader = oCommand.ExecuteReader())
+                {
+                    while (oReader.Read())
+                    {
+                        lUsers.Add(new User()
+                        {
+                            nUserID = (int)oReader["USER_ID"],
+                            sUserName = (string)oReader["USERNAME"],
+                            sUserPassword = (string)oReader["PASSWORD"],
+                            sUserFirstName = (string)oReader["NAME"],
+                            sUserLastName = (string)oReader["SURNAME"]
+                        });
+                    }
+                }
+            }
+            return lUsers;
         }
     }
 }

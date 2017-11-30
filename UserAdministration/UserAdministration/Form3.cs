@@ -29,7 +29,7 @@ namespace UserAdministration
             int nId = Int32.Parse(lblDeleteUserId.Text);
             Trace.WriteLine(nId);
             Crud oCrud = new Crud();
-            //oCrud.DeleteUser(nId);
+            oCrud.DeleteUser(nId);
             
 
             this.FormUserList.DataGridViewUsers.DataSource = oCrud.GetUsers();

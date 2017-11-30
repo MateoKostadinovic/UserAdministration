@@ -23,14 +23,14 @@ namespace UserAdministration
             //DODAVANJE NOVIH KOLONA
             //Button za uredivanje
             DataGridViewImageColumn oEditButton = new DataGridViewImageColumn();//nova kolona tipa Image
-            oEditButton.Image = Image.FromFile("C:\\Fakultet\\Programiranje u .NET okolini\\if_pencil_1608787.png");
+            oEditButton.Image = Image.FromFile("D:\\Mateo Kostadinovic\\NET\\LV4\\if_pencil_1608787.png");
             oEditButton.Width = 20;
             oEditButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             DataGridViewUsers.Columns.Add(oEditButton);
 
             //Button za brisanje
             DataGridViewImageColumn oDeleteButton = new DataGridViewImageColumn();//nova kolona tipa Image
-            oDeleteButton.Image = Image.FromFile("C:\\Fakultet\\Programiranje u .NET okolini\\if_ic_delete_48px_352303.png");
+            oDeleteButton.Image = Image.FromFile("D:\\Mateo Kostadinovic\\NET\\LV4\\if_ic_delete_48px_352303.png");
             oDeleteButton.Width = 20;
             oDeleteButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             DataGridViewUsers.Columns.Add(oDeleteButton);
@@ -59,6 +59,28 @@ namespace UserAdministration
                 FormDeleteUser.lblDeleteUserId.Text = DataGridViewUsers.Rows[e.RowIndex].Cells[0].Value.ToString();
                 FormDeleteUser.Show();
             }
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            FormAddUser FormAddUser = new FormAddUser(this);
+            FormAddUser.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string sUserFirstName = inptSearch.Text;
+            Crud oCrud = new Crud();
+            DataGridViewUsers.DataSource= oCrud.SearchUser(sUserFirstName);
+        }
+        private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void oProgramuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Created by Mateo Kostadinović");
         }
     }
 }
