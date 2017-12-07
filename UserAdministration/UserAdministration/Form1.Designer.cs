@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.DataGridViewUsers = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSearch = new System.Windows.Forms.Label();
             this.inptSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -38,11 +43,6 @@
             this.izlazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomoćToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewUsers)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,36 @@
             this.DataGridViewUsers.Size = new System.Drawing.Size(770, 230);
             this.DataGridViewUsers.TabIndex = 0;
             this.DataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewUsers_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "nUserID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "sUserName";
+            this.Column2.HeaderText = "Korisničko ime";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "sUserPassword";
+            this.Column3.HeaderText = "Lozinka";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "sUserFirstName";
+            this.Column4.HeaderText = "Ime";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "sUserLastName";
+            this.Column5.HeaderText = "Prezime";
+            this.Column5.Name = "Column5";
             // 
             // lblSearch
             // 
@@ -126,6 +156,7 @@
             this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
             this.izlazToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.izlazToolStripMenuItem.Text = "Izlaz";
+            this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click_1);
             // 
             // pomoćToolStripMenuItem
             // 
@@ -140,36 +171,7 @@
             this.oProgramuToolStripMenuItem.Name = "oProgramuToolStripMenuItem";
             this.oProgramuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.oProgramuToolStripMenuItem.Text = "O programu";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "nUserID";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "sUserName";
-            this.Column2.HeaderText = "Korisničko ime";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "sUserPassword";
-            this.Column3.HeaderText = "Lozinka";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "sUserFirstName";
-            this.Column4.HeaderText = "Ime";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "sUserLastName";
-            this.Column5.HeaderText = "Prezime";
-            this.Column5.Name = "Column5";
+            this.oProgramuToolStripMenuItem.Click += new System.EventHandler(this.oProgramuToolStripMenuItem_Click_1);
             // 
             // Form1
             // 

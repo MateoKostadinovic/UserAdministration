@@ -73,12 +73,13 @@ namespace UserAdministration
             Crud oCrud = new Crud();
             DataGridViewUsers.DataSource= oCrud.SearchUser(sUserFirstName);
         }
-        private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
+          
+        private void izlazToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void oProgramuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void oProgramuToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("Created by Mateo Kostadinović");
         }
